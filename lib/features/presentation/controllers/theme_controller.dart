@@ -14,12 +14,6 @@ class XThemeController extends GetxController {
   double get height => Get.height;
   double get width => Get.width;
 
-  // ! Images
-  String get appLogo =>
-      _isLight.value
-          ? 'assets/images/logo_light.png'
-          : 'assets/images/logo_dark.png';
-
   // ! Colors
   Color get primaryColor =>
       _isLight.value ? XColors.primaryColor : XColors.primaryColor;
@@ -29,8 +23,6 @@ class XThemeController extends GetxController {
 
   Color get textColor =>
       _isLight.value ? XColors.textColor : XColors.textColorDark;
-
-  // ... add more colors as needed
 
   @override
   void onInit() {
@@ -70,25 +62,6 @@ class XThemeController extends GetxController {
             textTheme: ThemeData.dark().textTheme.apply(fontFamily: 'Poppins'),
           ),
     );
-
-    // if you want mobile status bar color to change with theme
-    // if (isLight) {
-    //   SystemChrome.setSystemUIOverlayStyle(
-    //     SystemUiOverlayStyle.light.copyWith(
-    //       statusBarColor: XColors.backgroundColor,
-    //       statusBarIconBrightness: Brightness.dark,
-    //       statusBarBrightness: Brightness.light,
-    //     ),
-    //   );
-    // } else {
-    //   SystemChrome.setSystemUIOverlayStyle(
-    //     SystemUiOverlayStyle.light.copyWith(
-    //       statusBarColor: XColors.backgroundColorDark,
-    //       statusBarIconBrightness: Brightness.light,
-    //       statusBarBrightness: Brightness.dark,
-    //     ),
-    //   );
-    // }
     update();
   }
 }
